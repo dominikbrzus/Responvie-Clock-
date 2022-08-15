@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 80vh;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.1rem;
+  background-color: rgb(247, 254, 255);
+}
+
+.title {
+  text-align: center;
+  margin: 2rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.clock {
+  width: 360px;
+  border-radius: 50%;
+  border: 0.1rem solid rgb(208, 208, 208);
+  position: relative;
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0.2rem 0.1rem rgba(159, 159, 159, 0.6);
+}
+
+.clock::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.element {
+  position: absolute;
+  background-color: rgb(208, 208, 208);
+  border-radius: 0.2rem;
+  z-index: 10;
+}
+
+.element:nth-child(even)::before,
+.element:nth-child(odd)::before {
+  position: absolute;
+  font-size: clamp(1.4rem, 1vw, 1.6rem);
+  color: rgba(149, 149, 149, 0.739);
+}
+
+.element:nth-child(1) {
+  top: 0;
+  left: 50%;
+  height: 1rem;
+  width: 0.2rem;
+}
+
+.element:nth-child(1)::before {
+  content: "12";
+  top: 1.35rem;
+  right: -0.75rem;
+}
+
+.element:nth-child(2) {
+  bottom: 50%;
+  right: 0;
+  height: 0.2rem;
+  width: 1rem;
+}
+
+.element:nth-child(2)::before {
+  content: "3";
+  right: 1.35rem;
+  top: -0.5rem;
+}
+
+.element:nth-child(3) {
+  bottom: 0;
+  right: 50%;
+  height: 1rem;
+  width: 0.2rem;
+}
+
+.element:nth-child(3)::before {
+  content: "6";
+  position: absolute;
+  bottom: 1.35rem;
+  right: -0.5rem;
+}
+
+.element:nth-child(4) {
+  bottom: 50%;
+  left: 0;
+  height: 0.2rem;
+  width: 1rem;
+}
+
+.element:nth-child(4)::before {
+  content: "9";
+  left: 1.35rem;
+  top: -0.5rem;
+}
+
+.seconds,
+.minutes,
+.hours {
+  position: absolute;
+  background-color: rgb(208, 208, 208);
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  border-radius: 0.2rem;
+  z-index: 4;
+}
+
+.hours {
+  height: 20%;
+  background-color: rgb(186, 49, 31);
+  width: 0.35rem;
+}
+
+.minutes {
+  height: 35%;
+  background-color: rgb(30, 53, 186);
+  width: 0.2rem;
+}
+
+.seconds {
+  height: 45%;
+  background-color: rgb(0, 0, 0);
+  width: 0.2rem;
+}
+
+.round {
+  background-color: rgb(255, 255, 255);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  border: 0.2rem solid rgb(0, 0, 0);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 0.3rem solid rgba(217, 217, 217, 0.185);
+  padding: 1.7rem;
+  z-index: 2;
+}
+
+.digital-hour {
+  text-align: center;
+  font-size: clamp(1.1rem, 1vw, 1.2rem);
+  letter-spacing: 0.1rem;
+  margin: 2rem 0;
+}
+
+.footer {
+  margin-top: 6rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgb(90, 90, 90);
+}
